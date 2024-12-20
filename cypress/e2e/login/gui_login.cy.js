@@ -1,5 +1,5 @@
 describe('Testes de Login!', () => {
-    it('Deve realizar o login com sucesso.', () => {
+    it.only('Deve realizar o login com sucesso.', () => {
        cy.visit("https://www.saucedemo.com/");
 
        cy.get('[data-test="username"]').type('standard_user');

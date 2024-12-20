@@ -1,5 +1,5 @@
 describe.only('API - Teste funcional de Login', () => {
-    it.only('Deve realizar o login com sucesso', () => {
+    it('Deve realizar o login com sucesso', () => {
         //npx serverest@latest
 
         cy.request({
