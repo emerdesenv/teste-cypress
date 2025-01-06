@@ -1,8 +1,5 @@
 describe.only('API - Teste funcional de Login', () => {
     it('Deve realizar o login com sucesso', () => {
-        //npx serverest@latest
-        //Cypress.env('urlApiLocal')
-
         cy.request({
             method: 'POST',
             url: 'http://localhost:3000/login',

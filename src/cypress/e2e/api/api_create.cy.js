@@ -1,11 +1,11 @@
 describe.only('API - Teste funcional de Login', () => {
-    it.only('Deve inserir um novo cadastro', () => {
+    it('Deve inserir um novo cadastro', () => {
         cy.request({
             method: 'POST',
             url: 'http://localhost:3000/usuarios',
             body: {
                 "nome": "Fulano da Silva",
-                "email": "testinhodeliciatop@qa.com.br",
+                "email": "testinhonovo@qa.com.br",
                 "password": "123456",
                 "administrador": "true"
               },
@@ -21,7 +21,7 @@ describe.only('API - Teste funcional de Login', () => {
             url: 'http://localhost:3000/usuarios',
             body: {
                 "nome": "Fulano da Silva",
-                "email": "testinhodeliciatop@qa.com.br",
+                "email": "testinhonovo@qa.com.br",
                 "password": "123456",
                 "administrador": "true"
               },
