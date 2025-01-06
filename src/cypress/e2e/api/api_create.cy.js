@@ -1,5 +1,13 @@
+import { faker } from '@faker-js/faker';
+
 describe.only('API - Teste funcional de Login', () => {
-    it('Deve inserir um novo cadastro', () => {
+    it.only('Deve inserir um novo cadastro', () => {
+        const randomName = faker.person.fullName();
+        const randomEmail = faker.internet.email();
+
+        cy.log('Nome: '+randomName);
+        cy.log('Email: '+randomEmail);
+
         cy.request({
             method: 'POST',
             url: 'http://localhost:3000/usuarios',
