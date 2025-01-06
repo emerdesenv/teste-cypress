@@ -1,6 +1,6 @@
 node_modules
 package-lock.json
 .vscode/*
-cypress/screenshots/
-cypress/videos/
-cypress/downloads/
+src/cypress/screenshots/
+src/cypress/videos/
+src/cypress/downloads/
