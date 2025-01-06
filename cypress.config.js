@@ -9,7 +9,7 @@ module.exports = defineConfig({
         },
     },
     env: {
-        urlLocal: 'https://saas2-beta.jelastic.saveincloud.net',
+        urlSite: 'https://www.saucedemo.com/',
         urlApiLocal: 'http://localhost:3000'
     }
 });

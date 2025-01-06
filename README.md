@@ -1,7 +1,8 @@
 ## Testes Cypress
 
-* Projeto criado + autenticação clound
+* Autenticação clound (Opcional)
 * API local para testes ServeRest
+* Testes de API + Interface
 
 ## Primeios passos após o clone do projeto
 
@@ -17,5 +18,16 @@
 
 ## Preparação do ambiente do Zero
 
-* npx cypress open vai rodar tudo o que precisa e abrir a interface local do Cypress
+* Rodar o comando **npx cypress open** dentro da pasta do projeto, irá rodar tudo o que precisa e abrir a interface local do Cypress
 * Após feito isso o mesmo irá dar as opções de configurar o Cypress e em seguida o mesmo irá dar a opção de criar templates ou você mesmo criar os testes
+
+## Configuração para Projetos que não possui o Cypress
+
+* Rodar o comando **npx cypress open** dentro da pasta do projeto, irá rodar tudo o que precisa e abrir a interface local do Cypress
+* Após feito isso o mesmo irá dar as opções de configurar o Cypress e em seguida o mesmo irá dar a opção de criar templates ou você mesmo criar os testes, neste caso optaremos por criar os arquivos
+
+## Documentações de Referências
+
+* **ServeRest** - https://serverest.dev/
+* **Cypress** - https://www.cypress.io/
+* **Site de Testes** - https://www.saucedemo.com/
