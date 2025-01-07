@@ -1,19 +1,45 @@
-name: Cypress Testes
+name: Executar Cypress - Teste Alterado
 
-on: push
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   cypress-run:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Cypress run
-        uses: cypress-io/github-action@v6
-      - uses: actions/upload-artifact@v4
+      # Passo 1: Baixar o código
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      # Passo 2: Configurar Node.js
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
         with:
-          summary-title: 'Teste'
-          name: cypress-reports
-          path: cypress/reports
-          if-no-files-found: ignore
-      - uses: actions/upload-artifact@v4
+          node-version: '16'
+
+      # Passo 3: Instalar dependências
+      - name: Instalar dependências
+        run: npm ci
+
+      # Passo 4: Identificar arquivo de teste alterado
+      - name: Detectar arquivo Cypress alterado
+        id: detect-changes
+        run: |
+          git fetch origin main
+          git diff --name-only origin/main > changed-files.txt
+          grep -E 'cypress/e2e/.*\.cy\.js' changed-files.txt > tests-to-run.txt || true
+          if [ -s tests-to-run.txt ]; then
+            echo "::set-output name=test_file::$(head -n 1 tests-to-run.txt)"
+          fi
+
+      # Passo 5: Executar teste alterado
+      - name: Executar Cypress no arquivo alterado
+        if: steps.detect-changes.outputs.test_file != ''
+        run: |
+          npx cypress run --spec ${{ steps.detect-changes.outputs.test_file }}
