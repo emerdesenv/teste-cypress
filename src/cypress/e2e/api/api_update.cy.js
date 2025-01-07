@@ -8,6 +8,8 @@ describe.only('API - Teste funcional de Login', () => {
         cy.log('Nome: '+randomName);
         cy.log('Email: '+randomEmail);
 
+        //Teste
+
         cy.request({
             method: 'PUT',
             url: 'http://localhost:3000/usuarios/0uxuPY0cbmQhpEz1',
