@@ -1,11 +1,19 @@
+
+import { faker } from '@faker-js/faker';
 describe.only('API - Teste funcional de Login', () => {
-    it('Deve inserir um novo cadastro', () => {
+    const randomName = faker.person.fullName();
+    const randomEmail = faker.internet.email();
+
+    it('Deve alterar o cadastro', () => {
+        cy.log('Nome: '+randomName);
+        cy.log('Email: '+randomEmail);
+
         cy.request({
             method: 'PUT',
             url: 'http://localhost:3000/usuarios/0uxuPY0cbmQhpEz1',
             body: {
-                "nome": "Fulano da Silva Teste",
-                "email": "testinhonovo@qa.com.br",
+                "nome": randomName,
+                "email": randomEmail,
                 "password": "123456",
                 "administrador": "true"
               },

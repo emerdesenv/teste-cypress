@@ -1,7 +1,9 @@
 {
     "devDependencies": {
         "@faker-js/faker": "^9.3.0",
-        "cypress": "^13.17.0"
+        "cypress": "^13.17.0",
+        "cypress-mochawesome-reporter": "^3.8.2",
+        "cypress-multi-reporters": "^2.0.4"
     },
     "name": "teste-cypress",
     "version": "1.0.0",

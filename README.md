@@ -31,3 +31,4 @@
 * **ServeRest** - https://serverest.dev/
 * **Cypress** - https://www.cypress.io/
 * **Site de Testes** - https://www.saucedemo.com/
+* **FakerJS** - https://fakerjs.dev/
