@@ -1,4 +1,4 @@
-describe('Testes de Login!', () => {
+describe('Testes de Login!', { tags: ['login'] }, () => {
     it.only('Deve realizar o login com sucesso.', () => {
        cy.visit(Cypress.env('urlSite'));
 

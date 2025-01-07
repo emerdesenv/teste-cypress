@@ -1,9 +1,6 @@
 name: Cypress Tests
 
-on:
-  pull_request:
-    branches:
-      - main
+on: push
 
 jobs:
   cypress-run:
@@ -19,24 +16,7 @@ jobs:
           path: cypress/reports
           if-no-files-found: ignore
       - uses: actions/upload-artifact@v4
-       # Passo 4: Identificar arquivos alterados
-      - name: Identificar alterações
-        id: changes
+      # Passo 4: Executar testes com tags
+      - name: Executar Cypress com Tags
         run: |
-          git fetch origin main
-          git diff --name-only origin/main > changed-files.txt
-          echo "::set-output name=files::$(cat changed-files.txt)"
-
-      # Passo 5: Filtrar testes
-      - name: Filtrar testes Cypress
-        id: filter-tests
-        run: |
-          # Ajuste o caminho conforme seu projeto
-          grep -E 'cypress/e2e/.*\.cy\.js' changed-files.txt > tests-to-run.txt || true
-          echo "::set-output name=tests::$(cat tests-to-run.txt)"
-
-      # Passo 6: Executar testes filtrados
-      - name: Rodar Cypress
-        if: steps.filter-tests.outputs.tests != ''
-        run: |
-          xargs -a tests-to-run.txt -I {} npx cypress run --spec {}
+          npx cypress run --env grepTags=${{ github.event.head_commit.message }}
