@@ -8,8 +8,6 @@ describe('API - Teste para criação de usuário', () => {
         cy.log('Nome: '+randomName);
         cy.log('Email: '+randomEmail);
 
-        //Teste
-        
         cy.request({
             method: 'POST',
             url: 'http://localhost:3000/usuarios',
