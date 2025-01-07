@@ -38,4 +38,4 @@
 * Rodar o teste somente de um arquivo: **npx cypress run --spec "cypress/e2e/pasta/nome-do-arquivo.cy.js"**
 * Rodar todos os testes: **npx cypress run**
 * Abrir a interface local para rodar os testes: **npx cypress open**
-* Rodar os testes ao comitar para o GitHub, deve estar configurado o arquivo **main.uml**
+* Rodar os testes ao comitar para o GitHub, deve estar configurado o arquivo **main.yml**
