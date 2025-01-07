@@ -13,8 +13,8 @@ jobs:
         # after the test run completes store videos and any screenshots
       - uses: actions/upload-artifact@v4
         with:
-          name: cypress-screenshots
-          path: cypress/screenshots
+          name: cypress-reports
+          path: cypress/reports
           if-no-files-found: ignore
       - uses: actions/upload-artifact@v4
         with:
