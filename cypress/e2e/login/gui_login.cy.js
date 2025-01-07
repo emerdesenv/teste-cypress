@@ -1,6 +1,6 @@
 describe('Testes de Login!', () => {
     it.only('Deve realizar o login com sucesso.', () => {
-       cy.visit("https://www.saucedemo.com/");
+       cy.visit(Cypress.env('urlSite'));
 
        cy.get('[data-test="username"]').type('standard_user');
        cy.get('[data-test="password"]').type('secret_sauce');

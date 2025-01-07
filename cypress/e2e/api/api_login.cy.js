@@ -2,7 +2,7 @@ describe.only('API - Teste funcional de Login', () => {
     it('Deve realizar o login com sucesso', () => {
         cy.request({
             method: 'POST',
-            url: 'http://localhost:3000/login',
+            url: Cypress.env('urlApiWeb')+'/login',
             body: {
                 "email": "fulano@qa.com",
                 "password": "teste"
@@ -16,7 +16,7 @@ describe.only('API - Teste funcional de Login', () => {
     it('Deve validar senha incorreta', () => {
         cy.request({
             method: 'POST',
-            url: 'http://localhost:3000/login',
+            url: Cypress.env('urlApiWeb')+'/login',
             body: {
                 "email": "fulano@qa.com",
                 "password": "testinho"
@@ -31,7 +31,7 @@ describe.only('API - Teste funcional de Login', () => {
     it('Pega um usuário existente', () => {
         cy.request({
             method: 'GET',
-            url: 'http://localhost:3000/usuarios/0uxuPY0cbmQhpEz1'
+            url: Cypress.env('urlApiWeb')+'/usuarios/0uxuPY0cbmQhpEz1'
         }).then((response)=>{
             expect(response.status).to.equal(200)
 

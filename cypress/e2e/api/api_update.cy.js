@@ -12,7 +12,7 @@ describe.only('API - Teste funcional de Login', () => {
 
         cy.request({
             method: 'PUT',
-            url: 'http://localhost:3000/usuarios/0uxuPY0cbmQhpEz1',
+            url: Cypress.env('urlApiWeb')+'/usuarios/0uxuPY0cbmQhpEz1',
             body: {
                 "nome": randomName,
                 "email": randomEmail,

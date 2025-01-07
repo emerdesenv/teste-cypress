@@ -10,7 +10,7 @@ describe('API - Teste para criação de usuário', () => {
 
         cy.request({
             method: 'POST',
-            url: 'http://localhost:3000/usuarios',
+            url: Cypress.env('urlApiWeb')+'/usuarios',
             body: {
                 "nome": randomName,
                 "email": randomEmail,

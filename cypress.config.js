@@ -21,6 +21,7 @@ module.exports = defineConfig({
     },
     env: {
         urlSite: 'https://www.saucedemo.com/',
-        urlApiLocal: 'http://localhost:3000'
+        urlApiLocal: 'http://localhost:3000',
+        urlApiWeb: 'https://serverest.dev'
     }
 });
