@@ -1,7 +1,4 @@
 describe.only('API - Teste para pegar um usuário', () => {
-
-    // Teste
-    
     it('Pega um usuário existente', () => {
         cy.request({
             method: 'GET',
