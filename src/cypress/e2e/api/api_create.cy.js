@@ -7,6 +7,8 @@ describe('API - Teste para criação de usuário', () => {
     it('Deve inserir um novo cadastro', () => {
         cy.log('Nome: '+randomName);
         cy.log('Email: '+randomEmail);
+
+        //Teste
         
         cy.request({
             method: 'POST',

@@ -1,7 +1,6 @@
 .vscode/*
 src/node_modules
 src/cypress/reports
-src/package-lock.json
 src/cypress/screenshots/
 src/cypress/videos/
 src/cypress/downloads/
