@@ -10,14 +10,30 @@ jobs:
         uses: actions/checkout@v4
       - name: Cypress run
         uses: cypress-io/github-action@v6
-        # after the test run completes store videos and any screenshots
       - uses: actions/upload-artifact@v4
         with:
           name: cypress-reports
           path: cypress/reports
           if-no-files-found: ignore
       - uses: actions/upload-artifact@v4
-        with:
-          name: cypress-videos
-          path: cypress/videos
-          if-no-files-found: ignore
+       # Passo 4: Identificar arquivos alterados
+      - name: Identificar alterações
+        id: changes
+        run: |
+          git fetch origin main
+          git diff --name-only origin/main > changed-files.txt
+          echo "::set-output name=files::$(cat changed-files.txt)"
+
+      # Passo 5: Filtrar testes
+      - name: Filtrar testes Cypress
+        id: filter-tests
+        run: |
+          # Ajuste o caminho conforme seu projeto
+          grep -E 'cypress/e2e/.*\.cy\.js' changed-files.txt > tests-to-run.txt || true
+          echo "::set-output name=tests::$(cat tests-to-run.txt)"
+
+      # Passo 6: Executar testes filtrados
+      - name: Rodar Cypress
+        if: steps.filter-tests.outputs.tests != ''
+        run: |
+          xargs -a tests-to-run.txt -I {} npx cypress run --spec {}
