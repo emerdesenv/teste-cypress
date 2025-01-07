@@ -1,43 +1,21 @@
-name: Teste Cypress com Artifacts
+name: Cypress Testes
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+on: push
 
 jobs:
   cypress-run:
-    runs-on: ubuntu-latest
-
+    runs-on: ubuntu-24.04
     steps:
-      # Passo 1: Baixar o código
-      - name: Checkout do código
-        uses: actions/checkout@v3
-
-      # Passo 2: Configurar Node.js
-      - name: Configurar Node.js
-        uses: actions/setup-node@v3
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        if: always()
+      - uses: actions/upload-artifact@v4
         with:
-          node-version: '16'
-
-      # Passo 3: Instalar dependências
-      - name: Instalar dependências
-        run: npm ci
-
-      # Passo 4: Executar testes Cypress
-      - name: Executar Cypress
-        run: |
-          npx cypress run --record --key <SEU_KEY_OPCIONAL>
-        continue-on-error: true
-
-      # Passo 5: Criar Artifact de Evidências (logs e screenshots)
-      - name: Salvar Artifacts
-        if: always() # Gera artifacts mesmo que o teste falhe
-        uses: actions/upload-artifact@v3
-        with:
-          name: cypress-evidences
-          path: |
-            cypress/reports
+          name: cypress-reports
+          path: cypress/reports
+          if-no-files-found: ignore
+        
+        if: always()
+      - uses: actions/upload-artifact@v4
