@@ -1,4 +1,4 @@
-name: Cypress Tests
+name: Cypress Testes
 
 on: push
 
@@ -12,11 +12,8 @@ jobs:
         uses: cypress-io/github-action@v6
       - uses: actions/upload-artifact@v4
         with:
+          summary-title: 'Teste'
           name: cypress-reports
           path: cypress/reports
           if-no-files-found: ignore
       - uses: actions/upload-artifact@v4
-      # Passo 4: Executar testes com tags
-      - name: Executar Cypress com Tags
-        run: |
-          npx cypress run --env grepTags=${{ github.event.head_commit.message }}

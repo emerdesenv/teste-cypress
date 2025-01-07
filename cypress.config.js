@@ -17,13 +17,9 @@ module.exports = defineConfig({
     e2e: {
         setupNodeEvents(on, config) {
             require('cypress-mochawesome-reporter/plugin')(on);
-
-            require('cypress-grep/src/plugin')(config);
-            return config;
         },
     },
     env: {
-        grepFilterSpecs: true,
         urlSite: 'https://www.saucedemo.com/',
         urlApiLocal: 'http://localhost:3000',
         urlApiWeb: 'https://serverest.dev'

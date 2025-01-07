@@ -1,8 +1,6 @@
-describe('Testes de Login!', { tags: ['login'] }, () => {
+describe('Testes de Login!', () => {
     it.only('Deve realizar o login com sucesso.', () => {
        cy.visit(Cypress.env('urlSite'));
-
-       //teste
 
        cy.get('[data-test="username"]').type('standard_user');
        cy.get('[data-test="password"]').type('secret_sauce');
