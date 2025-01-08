@@ -10,8 +10,9 @@
 * Realizar o clone do projeto na sua máquina e colocar o mesmo dentro de uma pasta chamada **projetos**
 * Abrir o projeto no **Visual Studio Code** ou algum editdor de sua preferência
 * No terminal do **Visual Studio Code** rodar o comando: **npx cypress open**
+* No terminal rodar o comando: **npm install**
 
-## Configuração para testes de API
+## Configuração para testes de API (localhost)
 
 * Rodar o comando **npx serverest@latest** em um terminal do seu sistema operacional
 * Ao rodar na primeira vez este comando o mesmo irá realizar o download dos pacotes necessários e após isso o mesmo irá rodar o servidor local
@@ -19,8 +20,12 @@
 
 ## Instalação das Tecnologias
 
+* **Observações**: Se você já tiver o arquivo **package.json** o mesmo pode ser implementado as instruções em **devDependencies**
+
 * Rodar o comando no terminal: **npm install cypress --save-dev** para instalar o Cypress
-* Rodar o comando no terminal: **npx serverest@latest** para iniciar o ServerRest
+* Rodar o comando no terminal: **npm install --save-dev cypress-multi-reporters** para instalar o Cypress
+* Rodar o comando no terminal: **npm install cypress-multi-reporters --save-dev** para instalar o Cypress
+* Rodar o comando no terminal: **npm install @faker-js/faker --save-dev** para instalar o Cypress
 
 ## Configuração para Projetos que não possui o Cypress ou Projetos do Zero
 
