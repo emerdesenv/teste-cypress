@@ -15,8 +15,5 @@
     "keywords": [],
     "author": "Emerson Amancio",
     "license": "ISC",
-    "description": "Projeto para Testes",
-    "dependencies": {
-        "@cypress/grep": "^4.1.0"
-    }
+    "description": "Projeto para Testes"
 }

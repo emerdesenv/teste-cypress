@@ -1,30 +1,31 @@
-## Testes Cypress
+## Temas Abordados neste Projeto Cypress
 
-* Autenticação clound (Opcional)
-* API local para testes ServeRest
-* Testes de API + Interface
+* Testes E2E
+* Testes de API ServeRest
+* Autenticação Clound
+* GitHub Actions
 
-## Primeios passos após o clone do projeto
+## Primeios passos após o clone do Projeto
 
 * Realizar o clone do projeto na sua máquina e colocar o mesmo dentro de uma pasta chamada **projetos**
-* Abrir o projeto no **VS Code** ou algum editdor de sua preferência
+* Abrir o projeto no **Visual Studio Code** ou algum editdor de sua preferência
+* No terminal do **Visual Studio Code** rodar o comando: **npx cypress open**
+
+## Configuração para testes de API
+
 * Rodar o comando **npx serverest@latest** em um terminal do seu sistema operacional
-* No terminal do VS Code rodar o comando: **npx cypress open**
+* Ao rodar na primeira vez este comando o mesmo irá realizar o download dos pacotes necessários e após isso o mesmo irá rodar o servidor local
+* A API irá rodar na porta **http://localhost:3000/**
 
 ## Instalação das Tecnologias
 
 * Rodar o comando no terminal: **npm install cypress --save-dev** para instalar o Cypress
 * Rodar o comando no terminal: **npx serverest@latest** para iniciar o ServerRest
 
-## Preparação do ambiente do Zero
+## Configuração para Projetos que não possui o Cypress ou Projetos do Zero
 
 * Rodar o comando **npx cypress open** dentro da pasta do projeto, irá rodar tudo o que precisa e abrir a interface local do Cypress
-* Após feito isso o mesmo irá dar as opções de configurar o Cypress e em seguida o mesmo irá dar a opção de criar templates ou você mesmo criar os testes
-
-## Configuração para Projetos que não possui o Cypress
-
-* Rodar o comando **npx cypress open** dentro da pasta do projeto, irá rodar tudo o que precisa e abrir a interface local do Cypress
-* Após feito isso o mesmo irá dar as opções de configurar o Cypress e em seguida o mesmo irá dar a opção de criar templates ou você mesmo criar os testes, neste caso optaremos por criar os arquivos
+* Após a interface aberta o mesmo irá dar as opções de configurar o Cypress e em seguida irá dar a opção de criar templates ou você mesmo criar os testes, neste caso optaremos por criar os arquivos
 
 ## Documentações de Referências
 
@@ -32,6 +33,7 @@
 * **Cypress** - https://www.cypress.io/
 * **Site de Testes** - https://www.saucedemo.com/
 * **FakerJS** - https://fakerjs.dev/
+* **GitHub Actions** - https://docs.github.com/pt/actions
 
 ## Rodando os Testes localmente
 
