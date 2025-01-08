@@ -16,21 +16,23 @@ describe('API - Teste para criação de usuário', () => {
         cy.fixture('apiData.json').then((apiData) => {
             const nome  = apiData.user.emailIncorreto.nome;
             const email = apiData.user.emailIncorreto.email;
-            const pass  = apiData.user.emailIncorreto.pass;
+            const pass  = apiData.user.emailIncorreto.password;
             const adm   = apiData.user.emailIncorreto.adm;
 
             cy.request({
                 method: 'POST',
-                url: Cypress.env('urlApiWeb')+'/usuarios',
+                url: Cypress.env('urlApiLocal')+'/usuarios',
                 body: {
                     "nome": nome,
                     "email": email,
                     "password": pass,
                     "administrador": adm
-                  },
+                },
                 failOnStatusCode: false
             }).then((response)=>{
                 expect(response.status).to.equal(400)
+
+                cy.log(response.body);
                 expect(response.body.message).to.equal('Este email já está sendo usado')
             })
         });

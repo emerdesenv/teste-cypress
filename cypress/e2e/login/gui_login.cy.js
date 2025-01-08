@@ -1,9 +1,12 @@
-describe('Testes de Login!', () => {
-    it.only('Deve realizar o login com sucesso.', () => {
-       cy.visit(Cypress.env('urlSite'));
+import Login from '../pages/login'
 
-       cy.get('[data-test="username"]').type('standard_user');
-       cy.get('[data-test="password"]').type('secret_sauce');
-       cy.get('[data-test="login-button"]').click();
+describe('Testes de Login!', () => {
+    beforeEach(() => {
+        cy.visit(Cypress.env('urlSite'));
+    });
+
+    it.only('Deve realizar o login com sucesso.', () => {
+       //cy.visit(Cypress.env('urlSite'));
+       Login.login("standard_user", "secret_sauce");
     });
 });
