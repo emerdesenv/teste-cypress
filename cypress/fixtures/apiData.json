@@ -1,0 +1,22 @@
+{
+    "user": {
+        "loginCorreto": {
+            "nome": "Testinho Teste",
+            "email": "fulano@qa.com",
+            "password": "teste",
+            "adm": true
+        },
+        "emailIncorreto" : {
+            "nome": "Fulano da Silva",
+            "email": "testinhonovo@qa.com.br",
+            "password": "123456",
+            "adm": true
+        },
+        "senhaIncorreta": {
+            "nome": "Fulano Teste",
+            "email": "fulano@qa.com",
+            "password": "testinho",
+            "adm": true
+        }
+    }
+}
