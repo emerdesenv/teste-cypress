@@ -4,6 +4,8 @@
 * Testes de API ServeRest
 * Autenticação Clound
 * GitHub Actions
+* Page Objects
+* Commands
 
 ## Primeios passos após o clone do Projeto
 
