@@ -50,3 +50,7 @@
 * Rodar todos os testes: **npx cypress run**
 * Abrir a interface local para rodar os testes: **npx cypress open**
 * Rodar os testes ao comitar para o GitHub, deve estar configurado o arquivo **main.yml**
+
+## Desafios e Estudos 
+
+* Cypress Mock e Intercepts
