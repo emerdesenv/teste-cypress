@@ -8,7 +8,7 @@ describe.only('API - Teste funcional de Login', () => {
         cy.log('Nome: '+randomName);
         cy.log('Email: '+randomEmail);
 
-        cy.request({
+        cy.api({
             method: 'PUT',
             url: Cypress.env('urlApiWeb')+'/usuarios/0uxuPY0cbmQhpEz1',
             body: {

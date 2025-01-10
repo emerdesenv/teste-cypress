@@ -1,6 +1,6 @@
 describe.only('API - Teste funcional de Login', () => {
     it('Deve realizar o login com sucesso', () => {
-        cy.request({
+        cy.api({
             method: 'POST',
             url: Cypress.env('urlApiWeb')+'/login',
             body: {
@@ -14,7 +14,7 @@ describe.only('API - Teste funcional de Login', () => {
     });
 
     it('Deve validar senha incorreta', () => {
-        cy.request({
+        cy.api({
             method: 'POST',
             url: Cypress.env('urlApiWeb')+'/login',
             body: {
@@ -29,7 +29,7 @@ describe.only('API - Teste funcional de Login', () => {
     });
     
     it('Pega um usuário existente', () => {
-        cy.request({
+        cy.api({
             method: 'GET',
             url: Cypress.env('urlApiWeb')+'/usuarios/0uxuPY0cbmQhpEz1'
         }).then((response)=>{

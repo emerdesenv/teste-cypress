@@ -1,6 +1,6 @@
 describe.only('API - Teste para pegar um usuário', () => {
     it('Pega um usuário existente FDFDF', () => {
-        cy.request({
+        cy.api({
             method: 'GET',
             url: Cypress.env('urlApiWeb')+'/usuarios/0uxuPY0cbmQhpEz1'
         }).then((response)=>{

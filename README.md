@@ -1,11 +1,12 @@
 ## Temas Abordados neste Projeto Cypress
 
 * Testes E2E
-* Testes de API ServeRest
+* Testes de API com ServeRest Localhost
 * Autenticação Clound
 * GitHub Actions
 * Page Objects
 * Commands
+* MongoDB Clound Cypress
 
 ## Primeios passos após o clone do Projeto
 
@@ -26,8 +27,10 @@
 * **Observações**: Se você não tiver o arquivo **package.json** crie o com o comando: **npm init -y** e depois **npm install**
 
 * Rodar o comando no terminal: **npm install cypress --save-dev** para instalar o Cypress
-* Rodar o comando no terminal: **npm install cypress-multi-reporters --save-dev** para instalar o Cypress
-* Rodar o comando no terminal: **npm install @faker-js/faker --save-dev** para instalar o Cypress
+* Rodar o comando no terminal: **npm install cypress-plugin-api --save-dev** para instalar o PluginAPI
+* Rodar o comando no terminal: **npm install cypress-multi-reporters --save-dev** para instalar o Reporters
+* Rodar o comando no terminal: **npm install @faker-js/faker --save-dev** para instalar o FakerJS
+* Rodar o comando no terminal: **npm install cypress-mongodb --save-dev** para instalar o o MongoDB
 
 ## Configuração para Projetos que não possui o Cypress ou Projetos do Zero
 
@@ -43,6 +46,7 @@
 * **Site de Testes** - https://www.saucedemo.com/
 * **FakerJS** - https://fakerjs.dev/
 * **GitHub Actions** - https://docs.github.com/pt/actions
+* **MongoDB Clound Cypress** - https://www.npmjs.com/package/cypress-mongodb
 
 ## Rodando os Testes localmente
 
@@ -50,3 +54,4 @@
 * Rodar todos os testes: **npx cypress run**
 * Abrir a interface local para rodar os testes: **npx cypress open**
 * Rodar os testes ao comitar para o GitHub, deve estar configurado o arquivo **main.yml**
+* Rodar o comando: **node app.js** para rodar a API com a conexão com o **MongoDB Clound**

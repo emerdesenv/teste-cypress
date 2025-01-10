@@ -19,7 +19,7 @@ describe('API - Teste para criação de usuário', () => {
             const pass  = apiData.user.emailIncorreto.password;
             const adm   = apiData.user.emailIncorreto.adm;
 
-            cy.request({
+            cy.api({
                 method: 'POST',
                 url: Cypress.env('urlApiLocal')+'/usuarios',
                 body: {

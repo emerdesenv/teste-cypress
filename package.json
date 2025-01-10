@@ -3,7 +3,12 @@
         "@faker-js/faker": "^9.3.0",
         "cypress": "^13.17.0",
         "cypress-mochawesome-reporter": "^3.8.2",
-        "cypress-multi-reporters": "^2.0.4"
+        "cypress-mongodb": "^6.2.1",
+        "cypress-multi-reporters": "^2.0.4",
+        "cypress-plugin-api": "^2.11.2",
+        "dotenv": "^16.4.7",
+        "express": "^4.21.2",
+        "mongoose": "^8.9.4"
     },
     "name": "teste-cypress",
     "version": "1.0.0",
