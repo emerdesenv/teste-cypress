@@ -54,4 +54,11 @@
 * Rodar todos os testes: **npx cypress run**
 * Abrir a interface local para rodar os testes: **npx cypress open**
 * Rodar os testes ao comitar para o GitHub, deve estar configurado o arquivo **main.yml**
+<<<<<<< HEAD
 * Rodar o comando: **node app.js** para rodar a API com a conexão com o **MongoDB Clound**
+=======
+
+## Desafios e Estudos 
+
+* Cypress Mock e Intercepts
+>>>>>>> b0a8d289c290b8f4b5cf27645c72f1108d64ba99
