@@ -1,69 +1,69 @@
 const express = require('express');
-const Livro = require('./models');
+const Carro = require('./models');
 const router = express.Router();
 
-// Cadastro de livros
-router.post('/livros', async (req, res) => {
+// Cadastro de carros
+router.post('/carros', async (req, res) => {
     try {
-        const { titulo, autor, editora, anoPublicacao, numeroPaginas } = req.body;
+        const { marca, modelo, ano } = req.body;
 
         // Verificação se todos os campos foram preenchidos
-        if (!titulo || !autor || !editora || !anoPublicacao || !numeroPaginas) {
+        if(!marca || !modelo || !ano) {
             return res.status(400).json({ error: 'Todos os campos são obrigatórios' });
         }
 
-        const duplicado = await Livro.findOne({titulo: titulo})
+        const duplicado = await Carro.findOne({modelo: modelo})
 
-        if (duplicado) {
-            return res.status(409).json({erro: 'O título do livro já foi cadastrado.'})
+        if(duplicado) {
+            return res.status(409).json({erro: 'O modelo do carro já foi cadastrado.'})
         }
 
+        const carro = new Carro({ marca, modelo, ano });
+        await carro.save();
 
-        const livro = new Livro({ titulo, autor, editora, anoPublicacao, numeroPaginas });
-        await livro.save();
-        res.status(201).json(livro);
+        res.status(201).json(carro);
     } catch (error) {
-        res.status(500).json({ error: 'Erro ao cadastrar livro' });
+        res.status(500).json({ error: 'Erro ao cadastrar o carro' });
     }
 });
 
-// Listagem de livros
-router.get('/livros', async (req, res) => {
+// Listagem de carros
+router.get('/carros', async (req, res) => {
     try {
-        const livros = await Livro.find();
-        res.json(livros);
+        const carros = await Carro.find();
+        res.json(carros);
     } catch (error) {
-        res.status(500).json({ error: 'Erro ao listar livros' });
+        res.status(500).json({ error: 'Erro ao listar os carros' });
     }
 });
 
-// Consulta de livro por ID
-router.get('/livros/:id', async (req, res) => {
+// Consulta de carro por ID
+router.get('/carros/:id', async (req, res) => {
     try {
-        const livro = await Livro.findById(req.params.id);
+        const carro = await Carro.findById(req.params.id);
 
-        if (!livro) {
-            return res.status(404).json({ error: 'Livro não encontrado' });
+        if(!carro) {
+            return res.status(404).json({ error: 'Carro não encontrado' });
         }
 
-        res.json(livro);
+        res.json(carro);
     } catch (error) {
-        res.status(500).json({ error: 'Erro ao buscar livro' });
+        res.status(500).json({ error: 'Erro ao buscar o carro' });
     }
 });
 
-// Remoção de livro
-router.delete('/livros/:id', async (req, res) => {
+// Remoção de carro
+router.delete('/carros/:id', async (req, res) => {
     try {
-        const livro = await Livro.findByIdAndDelete(req.params.id);
+        const carro = await Carro.findByIdAndDelete(req.params.id);
 
-        if (!livro) {
-            return res.status(404).json({ error: 'Livro não encontrado' });
+        if(!carro) {
+            return res.status(404).json({ error: 'Carro não encontrado' });
         }
 
-        res.json({ message: 'Livro removido com sucesso' });
+        res.json({ message: 'Carro removido com sucesso' });
     } catch (error) {
-        res.status(500).json({ error: 'Erro ao deletar livro' });
+        res.status(500).json({ error: 'Erro ao deletar o carro' });
     }
 });
 

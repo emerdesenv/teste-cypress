@@ -26,11 +26,11 @@ module.exports = defineConfig({
         mongodb: {
             uri: 'mongodb+srv://testek6:LCZ8iX13ur40YCVO@cluster0.r8goc.mongodb.net/',
             database: 'test',
-            collection: 'livros'
+            collection: 'carros'
         },
         urlSite: 'https://www.saucedemo.com/',
         urlApiWeb: 'https://serverest.dev',
         urlApiLocal: 'http://localhost:3000',
-        urlApiMongoDB: 'http://localhost:5000'
+        urlApiMongoDB: 'http://localhost:3000'
     }
 });

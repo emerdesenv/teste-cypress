@@ -16,13 +16,13 @@ Cypress.Commands.add("api_create", (randomName, randomEmail)=> {
 });
 
 // Apenas para uso com o MongoDB Clound
-Cypress.Commands.add('postLivro', (livro) => {
+Cypress.Commands.add('postCarro', (carro) => {
     cy.api({
-        url: Cypress.env('urlApiMongoDB')+'/api/livros',
+        url: Cypress.env('urlApiMongoDB')+'/api/carros',
         method: 'POST',
-        body: livro,
+        body: carro,
         failOnStatusCode: false
     }).then(response => {
-        return response
+        return response;
     })
 });

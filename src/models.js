@@ -1,15 +1,13 @@
 const mongoose = require('mongoose');
 
-// Definindo o schema do livro
-const LivroSchema = new mongoose.Schema({
-    titulo: { type: String, required: true },
-    autor: { type: String, required: true },
-    editora: { type: String, required: true },
-    anoPublicacao: { type: Number, required: true },
-    numeroPaginas: { type: Number, required: true }
+// Definindo o schema do carro
+const CarroSchema = new mongoose.Schema({
+    marca: { type: String, required: true },
+    modelo: { type: String, required: true },
+    ano: { type: Number, required: true }
 });
 
-// Criando o modelo do livro
-const Livro = mongoose.model('Livro', LivroSchema);
+// Criando o modelo do carro
+const Carro = mongoose.model('Carro', CarroSchema);
 
-module.exports = Livro;
+module.exports = Carro;
