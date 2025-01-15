@@ -1,13 +1,22 @@
 name: Cypress Testes
 
+# Ao realizar um push ao repositório
 on: push
 
 jobs:
+  # O que será feito na pipeline
   cypress-run:
+    # Maquina que será executado
     runs-on: ubuntu-24.04
     steps:
-      - name: Checkout
+      # Passo a passo para rodar os testes
+      - name: Checkout do Projeto
         uses: actions/checkout@v4
+
+      # Instalando npm
+      - name: Instalar dependencias do projeto
+        run: npm install
+
       - name: Cypress run
         continue-on-error: true
         uses: cypress-io/github-action@v6
@@ -16,3 +25,5 @@ jobs:
         with:
           name: cypress-reports
           path: cypress/reports
+          # record: true
+        # env: CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
