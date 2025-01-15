@@ -10,7 +10,7 @@ screens.forEach(element => {
             }
 
             //Reaproveitamento de código aqui
-            cy.visit('google.com.br');
+            cy.visit(Cypress.env('urlSite'));
         });
     
         it('Deve realizar o login com sucesso.', () => {
