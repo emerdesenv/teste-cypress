@@ -31,6 +31,6 @@ module.exports = defineConfig({
         urlSite: 'https://www.saucedemo.com',
         urlApiWeb: 'https://serverest.dev',
         urlApiLocal: 'http://localhost:3000',
-        urlApiMongoDB: 'http://localhost:5000'
+        urlApiMongoDB: 'http://localhost:3000'
     }
 });

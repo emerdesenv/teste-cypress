@@ -20,7 +20,8 @@ jobs:
       # Iniciando os servidores ServerRest
       - name: Iniciando os servidores ServerRest
         run: npx serverest@latest
-
+        
+    steps:
       - name: Cypress run
         continue-on-error: true
         uses: cypress-io/github-action@v6
