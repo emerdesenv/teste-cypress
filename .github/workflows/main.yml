@@ -17,6 +17,10 @@ jobs:
       - name: Instalar dependências do projeto
         run: npm install
 
+      # Iniciando os servidores ServerRest
+        # - name: Iniciando os servidores MongoDB
+        # run: npx serverest@latest
+
       # Roda os testes por fim
       - name: Rodando os testes do Cypress
         continue-on-error: true
@@ -24,7 +28,7 @@ jobs:
         if: always()
       - uses: actions/upload-artifact@v4
         with:
-          name: Rodando as evidências dos Testes
-          path: cypress/reports
+          name: Evidências dos Testes
+          path: cypress/reports/html/index.html
           # record: true
         # env: CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
