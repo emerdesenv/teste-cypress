@@ -3,7 +3,7 @@
 * Testes E2E
 * Testes de API com ServeRest Localhost
 * Autenticação Clound
-* GitHub Actions
+* GitHub Actions + Cron
 * Page Objects
 * Commands
 * MongoDB Clound Cypress
@@ -47,6 +47,7 @@
 * **FakerJS** - https://fakerjs.dev/
 * **GitHub Actions** - https://docs.github.com/pt/actions
 * **MongoDB Clound Cypress** - https://www.npmjs.com/package/cypress-mongodb
+* **Cron Guru** - https://crontab.guru/
 
 ## Rodando os Testes localmente
 
