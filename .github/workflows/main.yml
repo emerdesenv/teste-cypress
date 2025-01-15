@@ -17,6 +17,10 @@ jobs:
       - name: Instalar dependencias do projeto
         run: npm install
 
+      # Iniciando os servidores ServerRest
+      - name: Iniciando os servidores ServerRest
+        run: npx serverest@latest
+
       - name: Cypress run
         continue-on-error: true
         uses: cypress-io/github-action@v6
