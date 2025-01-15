@@ -4,9 +4,11 @@ describe('API - Teste para criação de usuário', () => {
     const randomName = faker.person.fullName();
     const randomEmail = faker.internet.email();
     it('Deve inserir um novo cadastro', () => {
+        //Comandos de logs
         cy.log('Nome: '+randomName);
         cy.log('Email: '+randomEmail);
 
+        //Componente da chamada da requisição da API
         cy.api_create(randomName, randomEmail).then((responseBody) => {
             expect(responseBody.status).to.equal(201);
         });

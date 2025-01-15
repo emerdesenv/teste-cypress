@@ -59,3 +59,4 @@
 ## Desafios e Estudos 
 
 * Cypress Mock e Intercepts
+* Encadeamento de comandos JavaScript

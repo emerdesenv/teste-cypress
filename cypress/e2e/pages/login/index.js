@@ -30,7 +30,13 @@ class Login {
     // Função que combina as ações para realizar o login
     login(username, password) {
         this.fillUser(username);
+
+        cy.log("Nome: "+username);
+
         this.fillPassword(password);
+
+        cy.log("Senha: "+password);
+
         this.clickLogin();
     }
 }

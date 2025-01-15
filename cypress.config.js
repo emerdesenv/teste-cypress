@@ -28,7 +28,7 @@ module.exports = defineConfig({
             database: 'test',
             collection: 'carros'
         },
-        urlSite: 'https://www.saucedemo.com/',
+        urlSite: 'https://www.saucedemo.com',
         urlApiWeb: 'https://serverest.dev',
         urlApiLocal: 'http://localhost:3000',
         urlApiMongoDB: 'http://localhost:3000'
