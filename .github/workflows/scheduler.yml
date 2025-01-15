@@ -1,4 +1,4 @@
-name: Cypress Testes
+name: Cypress Testes Cron
 
 on:
   schedule:
