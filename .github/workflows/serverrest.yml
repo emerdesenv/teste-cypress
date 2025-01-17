@@ -1,4 +1,4 @@
-name: Cypress Testes
+name: Cypress Testes ServerRest
 
 # Ao realizar um push ao repositório
 on: push

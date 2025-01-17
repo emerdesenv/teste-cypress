@@ -1,4 +1,4 @@
-name: Cypress Testes
+name: Cypress MongoDB
 
 # Ao realizar um push ao repositório
 on: push

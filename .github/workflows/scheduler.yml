@@ -18,9 +18,7 @@ jobs:
       - name: Instalar dependências do projeto
         run: npm install
 
-      # Iniciando os servidores ServerRest
-        # - name: Iniciando os servidores MongoDB
-        # run: npx serverest@latest
+      # Iniciando os servidores ServerRest (Colocar aqui)
 
       # Roda os testes por fim
       - name: Rodando os testes do Cypress
