@@ -34,13 +34,12 @@ jobs:
       - name: Rodando os testes do Cypress (Aqui também setamos a variável de ambiente)
         continue-on-error: true
         env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
         uses: cypress-io/github-action@v6
         with:
           record: true
           spec: "cypress/e2e/api_mongodb/**/*.cy.js"
-        env: 
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         if: always()
       - uses: actions/upload-artifact@v4
         with:
