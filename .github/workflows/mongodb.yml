@@ -29,6 +29,8 @@ jobs:
         env:
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
         uses: cypress-io/github-action@v6
+        with:
+          spec: cypress/e2e/mongodb
         if: always()
       - uses: actions/upload-artifact@v4
         with:
