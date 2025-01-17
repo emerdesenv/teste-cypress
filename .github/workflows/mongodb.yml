@@ -15,7 +15,7 @@ jobs:
 
       # 2. Instalando npm
       - name: Instalar dependências do projeto
-        run: npm install
+        run: npm install --only=dev
 
       # 3. Rodar a conexão com o MongoDB
       - name: Rodando a conexão com o MongoDB (Aqui também setamos a variável de ambiente)
@@ -30,7 +30,7 @@ jobs:
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
         uses: cypress-io/github-action@v6
         with:
-          spec: cypress/e2e/mongodb
+          project: cypress/e2e/mongodb
         if: always()
       - uses: actions/upload-artifact@v4
         with:

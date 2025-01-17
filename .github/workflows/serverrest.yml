@@ -15,7 +15,7 @@ jobs:
 
       # 2. Instalando npm
       - name: Instalar dependências do projeto
-        run: npm install
+        run: npm install --only=dev
 
       # 3. Rodar a conexão com o MongoDB
       - name: Iniciando o ServerRest Localhost
@@ -26,7 +26,7 @@ jobs:
         continue-on-error: true
         uses: cypress-io/github-action@v6
         with:
-          spec: cypress/e2e/serverrest
+          project: cypress/e2e/serverrest
         if: always()
       - uses: actions/upload-artifact@v4
         with:
