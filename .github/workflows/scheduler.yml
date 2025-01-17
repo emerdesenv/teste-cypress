@@ -16,7 +16,7 @@ jobs:
 
       # Instalando npm
       - name: Instalar dependências do projeto
-        run: npm install
+        run: npm install --only=dev --loglevel=error
 
       # Iniciando os servidores ServerRest (Colocar aqui)
 

@@ -15,7 +15,7 @@ jobs:
 
       # 2. Instalando npm
       - name: Instalar dependências do projeto
-        run: npm install --only=dev
+        run: npm install --only=dev --loglevel=error
 
       # 3. Rodar a conexão com o MongoDB
       - name: Iniciando o ServerRest Localhost
