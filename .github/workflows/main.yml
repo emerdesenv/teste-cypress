@@ -17,19 +17,17 @@ jobs:
       - name: Instalar dependências do projeto
         run: npm install
 
-      # 3. Configurar variáveis de ambiente para o MongoDB Atlas
-      - name: Seta as variáveis de ambiente
-        env:
-          MONGODB_URI: ${{ secrets.MONGODB_URI }}
-        run: echo "MongoDB URI foi setada com sucesso."
-
       # 4. Rodar a conexão com o MongoDB
       - name: Rodando a conexão com o MongoDB
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
         run: node app.js &
 
       # 5. Roda os testes por fim
       - name: Rodando os testes do Cypress
         continue-on-error: true
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
         uses: cypress-io/github-action@v6
         if: always()
       - uses: actions/upload-artifact@v4
