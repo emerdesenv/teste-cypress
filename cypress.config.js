@@ -1,6 +1,6 @@
 const { defineConfig } = require("cypress");
-
 const { configurePlugin } = require('cypress-mongodb');
+require('dotenv').config();
 
 module.exports = defineConfig({
     reporter: 'cypress-multi-reporters',
@@ -24,7 +24,7 @@ module.exports = defineConfig({
     },
     env: {
         mongodb: {
-            uri: 'mongodb+srv://testek6:LCZ8iX13ur40YCVO@cluster0.r8goc.mongodb.net/',
+            uri: process.env.MONGO_URI,
             database: 'test',
             collection: 'carros'
         },

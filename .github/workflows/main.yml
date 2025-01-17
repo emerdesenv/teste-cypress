@@ -9,19 +9,27 @@ jobs:
     # Maquina que será executado
     runs-on: ubuntu-24.04
     steps:
-      # Passo a passo para rodar os testes
+      # 1. Passo a passo para rodar os testes
       - name: Checkout do Projeto
         uses: actions/checkout@v4
 
-      # Instalando npm
+      # 2. Instalando npm
       - name: Instalar dependências do projeto
         run: npm install
 
-      # Iniciando os servidores ServerRest
-        # - name: Iniciando os servidores MongoDB
-        # run: npx serverest@latest
+      # 3. Configurar variáveis de ambiente para o MongoDB Atlas
+      - name: Seta as variáveis de ambiente
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+        run: echo "MongoDB URI foi setada com sucesso."
 
-      # Roda os testes por fim
+      # 4. Rodar a conexão com o MongoDB
+      - name: Rodando a conexão com o MongoDB
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+        run: node app.js &
+
+      # 5. Roda os testes por fim
       - name: Rodando os testes do Cypress
         continue-on-error: true
         uses: cypress-io/github-action@v6
