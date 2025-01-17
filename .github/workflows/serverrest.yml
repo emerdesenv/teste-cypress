@@ -1,7 +1,14 @@
 name: Cypress Testes ServerRest
 
-# Ao realizar um push ao repositório
-on: push
+# Ao realizar um push e PR
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:  # Permite a execução manual através da interface do GitHub
 
 jobs:
   # O que será feito na pipeline

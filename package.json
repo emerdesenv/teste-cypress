@@ -15,7 +15,7 @@
     "version": "1.0.0",
     "main": "cypress.config.js",
     "scripts": {
-        "cypress-dashboard-run-cloud": "npx cypress run --browser chrome --record --key 86bfc7ce-4e85-4134-baa2-5df041cd13f5",
+        "cypress-dashboard-run-cloud": "npx cypress run --browser chrome --record --key KEY_DEFINIR",
         "cypress-dashboard-run": "npx cypress run --browser chrome"
     },
     "keywords": [],

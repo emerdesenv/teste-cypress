@@ -61,3 +61,7 @@
 
 * Cypress Mock e Intercepts
 * Encadeamento de comandos JavaScript
+
+## Orientações para Script em Pacakge.json
+
+* No Script **cypress-dashboard-run-cloud** em **KEY_DEFINIR** Colocar a sua key do Cypress Cloud

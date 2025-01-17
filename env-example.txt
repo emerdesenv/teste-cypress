@@ -1,1 +1,2 @@
 MONGODB_URI=mongodb+srv://<userdb>:<passdb>@cluster0.r8goc.mongodb.net/
+KEY_CYPRESS_CLOUD=DEFINIR
