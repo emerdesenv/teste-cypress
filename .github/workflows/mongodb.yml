@@ -30,7 +30,7 @@ jobs:
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
         uses: cypress-io/github-action@v6
         with:
-          project: cypress/e2e/api_mongodb
+          project: "cypress/e2e/api_serverrest/**/*"
         if: always()
       - uses: actions/upload-artifact@v4
         with:
