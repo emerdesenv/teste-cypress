@@ -24,7 +24,7 @@ module.exports = defineConfig({
     },
     env: {
         mongodb: {
-            uri: process.env.MONGO_URI,
+            uri: process.env.MONGODB_URI,
             database: 'test',
             collection: 'carros'
         },
