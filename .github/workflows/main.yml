@@ -25,8 +25,6 @@ jobs:
 
       # 4. Rodar a conexão com o MongoDB
       - name: Rodando a conexão com o MongoDB
-        env:
-          MONGODB_URI: ${{ secrets.MONGODB_URI }}
         run: node app.js &
 
       # 5. Roda os testes por fim
