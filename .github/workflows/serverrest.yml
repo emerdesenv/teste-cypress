@@ -19,10 +19,10 @@ jobs:
 
       # 3. Rodar a conexão com o MongoDB
       - name: Iniciando o ServerRest Localhost
-        run: npx serverest@latest &
+        run: npx serverest@2.29.5 &
 
       # 4. Roda os testes por fim
-      - name: Rodando os testes do Cypress (Aqui também setamos a variável de ambiente)
+      - name: Rodando os testes do Cypress
         continue-on-error: true
         uses: cypress-io/github-action@v6
         if: always()
