@@ -1,0 +1,34 @@
+name: Cypress Testes
+
+# Ao realizar um push ao repositório
+on: push
+
+jobs:
+  # O que será feito na pipeline
+  cypress-run:
+    # Maquina que será executado
+    runs-on: ubuntu-24.04
+    steps:
+      # 1. Passo a passo para rodar os testes
+      - name: Checkout do Projeto
+        uses: actions/checkout@v4
+
+      # 2. Instalando npm
+      - name: Instalar dependências do projeto
+        run: npm install
+
+      # 3. Rodar a conexão com o MongoDB
+      - name: Iniciando o ServerRest Localhost
+        run: npx serverest@latest &
+
+      # 4. Roda os testes por fim
+      - name: Rodando os testes do Cypress (Aqui também setamos a variável de ambiente)
+        continue-on-error: true
+        uses: cypress-io/github-action@v6
+        if: always()
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Evidências dos Testes
+          path: cypress/reports
+          # record: true
+        # env: CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
