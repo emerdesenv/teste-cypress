@@ -17,14 +17,14 @@ jobs:
       - name: Instalar dependências do projeto
         run: npm install
 
-      # 4. Rodar a conexão com o MongoDB
-      - name: Rodando a conexão com o MongoDB
+      # 3. Rodar a conexão com o MongoDB
+      - name: Rodando a conexão com o MongoDB (Aqui também setamos a variável de ambiente)
         env:
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
         run: node app.js &
 
-      # 5. Roda os testes por fim
-      - name: Rodando os testes do Cypress
+      # 4. Roda os testes por fim
+      - name: Rodando os testes do Cypress (Aqui também setamos a variável de ambiente)
         continue-on-error: true
         env:
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
@@ -33,6 +33,6 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: Evidências dos Testes
-          path: cypress/reports/html/index.html
+          path: cypress/reports
           # record: true
         # env: CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
