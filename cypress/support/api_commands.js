@@ -26,3 +26,14 @@ Cypress.Commands.add('postCarro', (carro) => {
         return response;
     })
 });
+
+// Apenas para uso com o MongoDB Clound
+Cypress.Commands.add('getCarro', (uuid) => {
+    cy.api({
+        url: Cypress.env('urlApiMongoDB')+'/api/carros/'+uuid,
+        method: 'GET',
+        failOnStatusCode: false
+    }).then(response => {
+        return response;
+    })
+});

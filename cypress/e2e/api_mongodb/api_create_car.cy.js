@@ -7,13 +7,13 @@ describe('POST: carros', () => {
     })
 
     it('Deve cadastrar um carro', () => {
-    const carro = {
-        "marca": "Chevrolet",
-        "modelo": "Celta",
-        "ano": 2012
-    };
+        const carro = {
+            "marca": "Chevrolet",
+            "modelo": "Celta",
+            "ano": 2012
+        };
 
-    cy.postCarro(carro)
+        cy.postCarro(carro)
         .then(response => {
             expect(response.status).to.eql(201);
 
@@ -22,7 +22,7 @@ describe('POST: carros', () => {
             expect(response.body.ano).to.eql(carro.ano);
             expect(response.body._id).to.not.be.empty;
         });
-    })
+    });
 
     it('Não deve cadastrar um carro com o mesmo modelo', () => {
         const carro = {
@@ -32,12 +32,12 @@ describe('POST: carros', () => {
         };
 
         cy.postCarro(carro)
-            .then(response => {
+        .then(response => {
             expect(response.status).to.eql(201)
         });
 
         cy.postCarro(carro)
-            .then(response => {
+        .then(response => {
             expect(response.status).to.eql(409)
             expect(response.body.erro).to.eql("O modelo do carro já foi cadastrado.")
         });
