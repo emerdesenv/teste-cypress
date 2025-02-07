@@ -4,7 +4,7 @@ require('dotenv').config();
 
 module.exports = defineConfig({
     reporter: 'cypress-multi-reporters',
-    projectId: "DEFINIR",
+    projectId: process.env.KEY_CLOUD,
     video: true,
     reporterOptions: {
         reporterEnabled: 'cypress-mochawesome-reporter',
