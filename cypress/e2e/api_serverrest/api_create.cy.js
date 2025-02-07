@@ -3,6 +3,7 @@ import { faker } from '@faker-js/faker';
 describe('API - Teste para criação de usuário', () => {
     const randomName = faker.person.fullName();
     const randomEmail = faker.internet.email();
+    
     it('Deve inserir um novo cadastro', () => {
         //Comandos de logs
         cy.log('Nome: '+randomName);
