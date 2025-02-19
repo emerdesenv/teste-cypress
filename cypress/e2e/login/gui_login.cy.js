@@ -1,30 +1,18 @@
 import Login from '../pages/login'
 
-const screens = ['desktop', 'iphone-6'];
+describe('Testes de Login!', () => {
+    beforeEach(() => {
+        cy.visit(Cypress.env('urlSite'));
+    });
 
-screens.forEach(element => {
-    describe('Testes de Login!', () => {
-        beforeEach(() => {
-            if(element != 'desktop') {
-                cy.viewport(element);
-            }
+    it('Deve realizar o login com sucesso.', () => {
+        cy.get('.login_logo')
+        .then((element) => {
+            expect(element.text()).eq('Swag Labs');
+            expect(element).to.be.visible;
+            expect(element).not.disabled;
+        });
 
-            //Reaproveitamento de código aqui
-            cy.visit(Cypress.env('urlSite'));
-        });
-    
-        it('Deve realizar o login com sucesso.', () => {
-            /*cy.get('.login_logo').should('be.visible');
-            cy.get('.login_logo').should('contain', 'Swag Labs');*/
-    
-            cy.get('.login_logo')
-            .then((element) => {
-                expect(element.text()).eq('Swag Labs');
-                expect(element).to.be.visible;
-                expect(element).not.disabled;
-            });
-    
-            Login.login("standard_user", "secret_sauce");
-        });
+        Login.login("standard_user", "secret_sauce");
     });
 });
