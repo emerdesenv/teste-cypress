@@ -13,7 +13,6 @@ describe('Testes de API - JSONPlaceholder', () => {
             expect(response.body).to.have.property('body');
         });
     });
-
     it('POST - Criar um novo dado', () => {
         cy.api({
             method: 'POST',

@@ -28,16 +28,18 @@ describe('Teste de Login no OrangeHRM', () => {
     });
 
     it('Testa o comportamento do botão de login (clicável)', () => {
-        // Verifica se o botão pode ser clicado sem lançar erro
-        cy.get('[name="username"]').type('Admin');
-        cy.get('[name="password"]').type('admin123');
+        cy.fixture('apiData.json').then((apiData) => {
+            // Verifica se o botão pode ser clicado sem lançar erro
+            cy.get('[name="username"]').type(apiData.user.loginCorreto.username);
+            cy.get('[name="password"]').type(apiData.user.loginCorreto.password);
 
-        cy.get('.oxd-button')
-        .should('not.be.disabled') // Verifica se o botão não está desabilitado
-        .click();
+            cy.get('.oxd-button')
+            .should('not.be.disabled') // Verifica se o botão não está desabilitado
+            .click();
 
-        // Se as credenciais forem válidas, esperamos que a página de inventário seja carregada
-        cy.url().should('include', '/dashboard');
+            // Se as credenciais forem válidas, esperamos que a página de inventário seja carregada
+            cy.url().should('include', '/dashboard');
+        });
     });
 
     it('Verifica mensagem de erro ao inserir dados incorretos', () => {
