@@ -1,4 +1,5 @@
 class Login {
+    
     visitarPagina() { cy.visit(Cypress.env('urlSite')); }
 
     getUserField() { return cy.get('[data-test="username"]'); }

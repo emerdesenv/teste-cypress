@@ -28,10 +28,10 @@ describe('Teste de Login no OrangeHRM', () => {
     });
 
     it('Testa o comportamento do botão de login (clicável)', () => {
-        cy.fixture('apiData.json').then((apiData) => {
+        cy.fixture('userData.json').then((userData) => {
             // Verifica se o botão pode ser clicado sem lançar erro
-            cy.get('[name="username"]').type(apiData.user.loginCorreto.username);
-            cy.get('[name="password"]').type(apiData.user.loginCorreto.password);
+            cy.get('[name="username"]').type(userData.user.loginCorreto.username);
+            cy.get('[name="password"]').type(userData.user.loginCorreto.password);
 
             cy.get('.oxd-button')
             .should('not.be.disabled') // Verifica se o botão não está desabilitado

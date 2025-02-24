@@ -1,0 +1,12 @@
+{
+    "user": {
+        "loginCorreto": {
+            "username": "Admin",
+            "password": "admin123"
+        },
+        "loginIncorreto" : {
+            "username": "user",
+            "password": "123456"
+        }
+    }
+}
