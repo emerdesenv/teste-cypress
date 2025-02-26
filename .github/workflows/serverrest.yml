@@ -2,9 +2,9 @@ name: Cypress Testes ServerRest
 
 # Ao realizar um push e PR
 on:
-  push:
-    branches:
-      - main
+  #push:
+    #branches:
+      #- main
   pull_request:
     branches:
       - main
@@ -15,7 +15,7 @@ jobs:
   cypress-run:
     # Maquina que será executado
     runs-on: ubuntu-24.04
-
+    
     steps:
       # 1. Passo a passo para rodar os testes
       - name: Checkout do Projeto

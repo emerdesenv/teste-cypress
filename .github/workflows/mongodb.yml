@@ -2,9 +2,9 @@ name: Cypress MongoDB
 
 # Ao realizar um push e PR
 on:
-  #push:
-    #branches:
-      #- main
+  push:
+    branches:
+      - main
   pull_request:
     branches:
       - main
@@ -33,7 +33,8 @@ jobs:
       # 4. Roda os testes por fim
       - name: Rodando os testes do Cypress (Aqui também setamos a variável de ambiente)
         continue-on-error: true
-        env:
+        env: 
+          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
         uses: cypress-io/github-action@v6
