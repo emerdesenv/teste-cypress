@@ -34,7 +34,7 @@ jobs:
           record: true
           spec: "cypress/e2e/login/**/*.cy.js"
           token: ${{ secrets.CYPRESS_RECORD_KEY }}
-          group: 'Agendamento Diário'
+          group: 'Testes Agrupados'
         if: always()
       - uses: actions/upload-artifact@v4
         with:

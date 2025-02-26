@@ -2,9 +2,9 @@ name: Cypress Testes ServerRest
 
 # Ao realizar um push e PR
 on:
-  #push:
-    #branches:
-      #- main
+  push:
+    branches:
+      - main
   pull_request:
     branches:
       - main
@@ -15,6 +15,11 @@ jobs:
   cypress-run:
     # Maquina que será executado
     runs-on: ubuntu-24.04
+    env:
+      # Mapeia as secrets para variáveis de ambiente
+      CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
+      CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+
     steps:
       # 1. Passo a passo para rodar os testes
       - name: Checkout do Projeto
@@ -35,8 +40,7 @@ jobs:
         with:
           record: true
           spec: "cypress/e2e/api_serverrest/**/*.cy.js"
-        env: 
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          token: ${{ secrets.CYPRESS_RECORD_KEY }}
         if: always()
       - uses: actions/upload-artifact@v4
         with:
