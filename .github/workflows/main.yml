@@ -12,10 +12,6 @@ jobs:
   cypress-run:
     # Maquina que será executado
     runs-on: ubuntu-24.04
-    env:
-      # Mapeia as secrets para variáveis de ambiente
-      CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
-      CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
 
     steps:
       # 1. Passo a passo para rodar os testes
@@ -33,8 +29,10 @@ jobs:
         with:
           record: true
           spec: "cypress/e2e/login/**/*.cy.js"
-          token: ${{ secrets.CYPRESS_RECORD_KEY }}
-          group: 'Testes Agrupados'
+        env:
+          # Mapeia as secrets para variáveis de ambiente
+          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         if: always()
       - uses: actions/upload-artifact@v4
         with:
