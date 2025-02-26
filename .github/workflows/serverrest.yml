@@ -42,5 +42,3 @@ jobs:
         with:
           name: Evidências dos Testes
           path: cypress/reports
-          # record: true
-        # env: CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
