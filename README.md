@@ -64,4 +64,7 @@
 
 ## Rodando os Testes na Nuvem
 
+* **Observações**: No arquivo **cypress.config.js** será necessário definir em **projectId** o ID do seu projeto Cloud Cpyress
+* **Observações**: No windows talvez seja necessário rodar o comando completo com as informações: **npx cypress run --browser chrome --record --key CYPRESS_RECORD_KEY**
+
 * Rode o comando no seu terminal: **npm run cypress-dashboard-run-cloud**
