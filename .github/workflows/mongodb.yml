@@ -2,9 +2,9 @@ name: Cypress MongoDB
 
 # Ao realizar um push e PR
 on:
-  push:
-    branches:
-      - main
+  #push:
+    #branches:
+      #- main
   pull_request:
     branches:
       - main

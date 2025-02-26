@@ -1,11 +1,8 @@
-name: Cypress Testes ServerRest
+name: Cypress Testes Login
 
 # Ao realizar um push e PR
 on:
-  #push:
-    #branches:
-      #- main
-  pull_request:
+  push:
     branches:
       - main
   workflow_dispatch:  # Permite a execução manual através da interface do GitHub
@@ -22,11 +19,7 @@ jobs:
 
       # 2. Instalando npm
       - name: Instalar dependências do projeto
-        run: npm install --only=dev --loglevel=error
-
-      # 3. Rodar a conexão com o MongoDB
-      - name: Iniciando o ServerRest Localhost
-        run: npx serverest@2.29.5 &
+        run: npm install --only=dev
 
       # 4. Roda os testes por fim
       - name: Rodando os testes do Cypress
@@ -34,7 +27,7 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           record: true
-          spec: "cypress/e2e/api_serverrest/**/*.cy.js"
+          spec: "cypress/e2e/login/**/*.cy.js"
         env: 
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         if: always()
