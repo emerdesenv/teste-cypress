@@ -18,15 +18,15 @@ jobs:
 
     steps:
       # 1. Passo a passo para rodar os testes
-      - name: Checkout do Projeto
+      - name: 🚀 Checkout do Repositório
         uses: actions/checkout@v4
 
       # 2. Instalando npm
-      - name: Instalar dependências do projeto
+      - name: 📦 Instalar dependências do projeto
         run: npm install --only=dev
 
       # 4. Roda os testes por fim
-      - name: Rodando os testes do Cypress
+      - name: 🧪 Rodando os testes do Cypress
         continue-on-error: true
         uses: cypress-io/github-action@v6
         with:
@@ -39,5 +39,5 @@ jobs:
         if: always()
       - uses: actions/upload-artifact@v4
         with:
-          name: Evidências dos Testes
+          name: 📑 Evidências dos Testes
           path: cypress/reports

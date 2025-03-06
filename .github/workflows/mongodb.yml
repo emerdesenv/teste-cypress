@@ -17,21 +17,21 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       # 1. Passo a passo para rodar os testes
-      - name: Checkout do Projeto
+      - name: 🚀 Checkout do Repositório
         uses: actions/checkout@v4
 
       # 2. Instalando npm
-      - name: Instalar dependências do projeto
+      - name: 📦 Instalar dependências do projeto
         run: npm install --only=dev
 
       # 3. Rodar a conexão com o MongoDB
-      - name: Rodando a conexão com o MongoDB (Aqui também setamos a variável de ambiente)
+      - name: 🖧 Iniciando a conexão com o MongoDB
         env:
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
         run: node app.js &
 
       # 4. Roda os testes por fim
-      - name: Rodando os testes do Cypress (Aqui também setamos a variável de ambiente)
+      - name: 🧪 Rodando os testes do Cypress
         continue-on-error: true
         env: 
           CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
@@ -44,5 +44,5 @@ jobs:
         if: always()
       - uses: actions/upload-artifact@v4
         with:
-          name: Evidências dos Testes
+          name: 📑 Evidências dos Testes
           path: cypress/reports
