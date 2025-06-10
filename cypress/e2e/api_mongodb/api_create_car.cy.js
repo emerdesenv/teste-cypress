@@ -1,5 +1,4 @@
 describe('POST: carros', () => {
-
     before(() => {
         cy.dropCollection('carros', { database: 'test', failSilently: 'true' }).then(result => {
             cy.log(result);

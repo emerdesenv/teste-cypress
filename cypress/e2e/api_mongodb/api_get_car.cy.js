@@ -1,11 +1,4 @@
-describe('POST: carros', () => {
-
-    /*before(() => {
-        cy.dropCollection('carros', { database: 'test', failSilently: 'true' }).then(result => {
-            cy.log(result);
-        });
-    })*/
-
+describe('GET: carros', () => {
     it('Deve pegar um carro com sucesso', () => {
         const uuid = "67991a412700449849426c57";
 

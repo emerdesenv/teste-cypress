@@ -2,7 +2,6 @@
 
 * Testes E2E
 * Testes de API com ServeRest Localhost
-* Testes com WireMock API
 * Autenticação Clound
 * GitHub Actions + Cron
 * Page Objects
